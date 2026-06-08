@@ -1,9 +1,10 @@
 function sendWeeklyLeaveLetter() {
   // --- CONFIGURATION ---
-  const wardenEmail = "devadanhall@christuniversity.com"; // Replace with warden's email
-  //const wardenEmail = "ethanjoseph5500@gmail.com"; //test email addr
-  const roomNumber = "209A";          // Replace with your room number
-  const registerNumber = "2660908";  // Replace with your roll/reg number
+  const wardenEmail = "warden_email@example.com"; // Replace with warden's email
+  const roomNumber = "YOUR_ROOM_NUMBER";          // Replace with your room number
+  const registerNumber = "YOUR_REGISTER_NUMBER";  // Replace with your roll/reg number
+  const parentName = "YOUR_PARENT_NAME";          // Replace with your parent's name
+  const parentContact = "YOUR_PARENT_CONTACT";    // Replace with your parent's phone number
   // ---------------------
 
   // Calculate dates for the upcoming weekend (assuming script runs on Wednesday)
@@ -20,20 +21,22 @@ function sendWeeklyLeaveLetter() {
   const satDateStr = saturday.toLocaleDateString('en-IN', options);
   const sunDateStr = sunday.toLocaleDateString('en-IN', options);
   
-  // Dynamic Subject line
-  const subject = `Request for Weekend Leave Permission (${satDateStr} - ${sunDateStr}) - Ethan Joseph`; 
+  // Subject line from Parent perspective
+  const subject = `Request for Weekend Leave Permission for Ethan Joseph (${satDateStr} - ${sunDateStr})`; 
   
-  // Dynamic Email Body
+  // Email Body from Parent perspective
   const emailBody = 
     "Respected Sir/Madam,\n\n" +
-    `I am writing to formally request permission to leave the hostel for the upcoming weekend. I plan to check out this Saturday evening (${satDateStr}) and will return to the hostel next day, Sunday evening (${sunDateStr}).\n\n` +
-    "Kindly grant me permission for the same.\n\n" +
+    `I am writing to formally request weekend leave permission for my ward, Ethan Joseph. I request you to kindly permit him to leave the hostel for the upcoming weekend. He plans to check out this Saturday evening (${satDateStr}) and will return to the hostel the next day, Sunday evening (${sunDateStr}).\n\n` +
+    "Kindly grant him permission for the same.\n\n" +
     "Thank you.\n\n" +
     "Sincerely,\n" +
-    "Ethan Joseph\n" +
-    `Room No: ${roomNumber}\n` +
-    `Roll/Register No: ${registerNumber}`;
+    `${parentName}\n` +
+    "Parent of Ethan Joseph\n" +
+    `Student Room No: ${roomNumber}\n` +
+    `Student Register No: ${registerNumber}\n` +
+    `Parent Contact No: ${parentContact}`;
 
-  // Sends the email via your university Gmail
+  // Sends the email via Gmail
   MailApp.sendEmail(wardenEmail, subject, emailBody);
 }
