@@ -1,5 +1,5 @@
 # hostel-leave-automation-chr
-Bangalore Mallus email sending to warden every weekend.
+Our hostel leave is sent to our warden through a mail. Since i live in the same state i go home every weekend, so i built an automation to send that mail every weekend.
 
 
 # Hostel Leave Letter Automation
