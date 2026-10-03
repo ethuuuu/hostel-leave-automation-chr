@@ -22,17 +22,17 @@ function sendWeeklyLeaveLetter() {
   const sunDateStr = sunday.toLocaleDateString('en-IN', options);
   
   // Subject line from Parent perspective
-  const subject = `Request for Weekend Leave Permission for Ethan Joseph (${satDateStr} - ${sunDateStr})`; 
+  const subject = `Request for Weekend Leave Permission for student. (${satDateStr} - ${sunDateStr})`; 
   
   // Email Body from Parent perspective
   const emailBody = 
     "Respected Sir/Madam,\n\n" +
-    `I am writing to formally request weekend leave permission for my ward, Ethan Joseph. I request you to kindly permit him to leave the hostel for the upcoming weekend. He plans to check out this Saturday evening (${satDateStr}) and will return to the hostel the next day, Sunday evening (${sunDateStr}).\n\n` +
+    `I am writing to formally request weekend leave permission for my ward. I request you to kindly permit him to leave the hostel for the upcoming weekend. He plans to check out this Saturday evening (${satDateStr}) and will return to the hostel the next day, Sunday evening (${sunDateStr}).\n\n` +
     "Kindly grant him permission for the same.\n\n" +
     "Thank you.\n\n" +
     "Sincerely,\n" +
     `${parentName}\n` +
-    "Parent of Ethan Joseph\n" +
+    "His/her Parent\n" +
     `Student Room No: ${roomNumber}\n` +
     `Student Register No: ${registerNumber}\n` +
     `Parent Contact No: ${parentContact}`;
